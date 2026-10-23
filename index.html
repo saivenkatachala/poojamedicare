@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pooja Medicare | Order Medicines on WhatsApp</title>
+<meta name="description" content="Pooja Medicare is a pharmacy that makes ordering medicines simple. Send your prescription, medicine name or voice message on WhatsApp and our team will help with availability and delivery options.">
+<meta name="keywords" content="pharmacy, order medicines on WhatsApp, prescription, medicine availability, medicine delivery enquiry, Pooja Medicare">
+<meta name="theme-color" content="#006B4F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pooja Medicare | Order Medicines on WhatsApp">
+<meta property="og:description" content="Your Health, Our Care. Send your prescription or medicine name on WhatsApp.">
+<!-- Add og:image and og:url once the site is live: <meta property="og:image" content="https://YOUR-DOMAIN/assets/og.png"> -->
+<link rel="icon" href="billlogo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Pharmacy","name":"Pooja Medicare","slogan":"Your Health, Our Care.","telephone":"+918332915695"}</script>
+<style>
+:root{
+  --emerald:#006B4F;--green:#009653;--mint:#DDF5E8;--off:#F7FBF8;--teal:#063E35;--white:#fff;--accent:#DDF08A;
+  --ink:#0d2a24;--muted:#4b6860;--wa:#25D366;
+  --r:24px;--r-sm:14px;--ease:cubic-bezier(.22,.8,.24,1);
+  --sh:0 1px 2px rgba(6,62,53,.06),0 8px 24px -6px rgba(6,62,53,.12),0 24px 48px -16px rgba(6,62,53,.14);
+  --font:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--off);line-height:1.6;font-size:1.0625rem;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+.ic{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic.fill{fill:currentColor;stroke:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;box-shadow:0 0 0 5px var(--teal);border-radius:10px}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+section{padding:clamp(4rem,9vw,7rem) 0;position:relative}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h1,h2,h3{line-height:1.1;margin:0;letter-spacing:-.02em;color:var(--teal)}
+h1{font-size:clamp(2.6rem,7vw,4.9rem);font-weight:800}
+h2{font-size:clamp(2rem,4.6vw,3.2rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+p{margin:0}
+.lead{font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--muted);max-width:56ch}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-weight:800;font-size:.8rem;letter-spacing:.14em;color:var(--emerald);background:var(--mint);padding:.45rem .9rem;border-radius:99px}
+.head{max-width:680px;margin-bottom:3rem}
+.head h2{margin-bottom:1rem}
+.center{text-align:center;margin-inline:auto}.center .lead{margin-inline:auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.65rem;min-height:52px;padding:.85rem 1.6rem;border-radius:99px;font:700 1rem var(--font);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .25s}
+.btn-wa{background:linear-gradient(180deg,#1fb85a,#00873f);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 10px 24px -8px rgba(0,150,83,.7)}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 18px 32px -10px rgba(0,150,83,.8)}
+.btn-ghost{background:transparent;color:var(--emerald);border-color:rgba(0,107,79,.3)}
+.btn-ghost:hover{background:var(--mint);transform:translateY(-3px)}
+.btn-light{background:#fff;color:var(--teal)}.btn-light:hover{transform:translateY(-3px);box-shadow:0 14px 28px -10px rgba(0,0,0,.4)}
+
+/* nav */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .35s,box-shadow .35s,backdrop-filter .35s}
+header.solid{background:rgba(247,251,248,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(6,62,53,.08),0 10px 30px -18px rgba(6,62,53,.4)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:72px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand b{display:block;font-weight:800;letter-spacing:.06em;color:var(--teal);font-size:1rem;line-height:1.1}
+.brand small{display:block;font-size:.72rem;color:var(--muted);font-weight:600}
+nav ul{display:flex;gap:.25rem;list-style:none;margin:0;padding:0}
+nav a.l{display:block;padding:.55rem .9rem;border-radius:99px;text-decoration:none;font-weight:600;font-size:.95rem;color:var(--ink);transition:background .2s}
+nav a.l:hover{background:var(--mint)}
+.nav-r{display:flex;align-items:center;gap:.6rem}
+.nav-r .btn{min-height:44px;padding:.55rem 1.15rem;font-size:.92rem}
+.burger{display:none;width:46px;height:46px;border-radius:14px;border:1px solid rgba(6,62,53,.18);background:#fff;cursor:pointer;color:var(--teal);align-items:center;justify-content:center}
+.burger .ic{width:24px;height:24px}
+.burger .x{display:none}.burger[aria-expanded=true] .x{display:block}.burger[aria-expanded=true] .m{display:none}
+
+/* hero */
+.hero{padding-top:clamp(7.5rem,14vw,9.5rem);padding-bottom:clamp(3rem,7vw,6rem);background:
+ radial-gradient(60% 50% at 85% 20%,rgba(0,150,83,.2),transparent 70%),
+ radial-gradient(45% 45% at 5% 90%,rgba(221,240,138,.5),transparent 70%),
+ radial-gradient(40% 40% at 50% 0,var(--mint),transparent 70%),var(--off);overflow:hidden}
+.hero-g{display:grid;gap:3rem;align-items:center}
+.hero h1{margin:1.3rem 0 1.4rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.9rem;margin:2rem 0}
+.ben{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;list-style:none;padding:0;margin:0;font-weight:600;font-size:.95rem}
+.ben li{display:flex;gap:.5rem;align-items:center}
+.ben .ic{color:var(--green);background:var(--mint);border-radius:50%;padding:.3rem;width:1.9em;height:1.9em}
+.stage{perspective:1300px;min-height:440px;display:grid;place-items:center;position:relative}
+.stage::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(0,150,83,.32),transparent 68%);filter:blur(10px)}
+.scene{position:relative;width:min(400px,92%);height:440px;transform-style:preserve-3d;transform:rotateX(calc(6deg + var(--ty,0deg))) rotateY(calc(-16deg + var(--tx,0deg)));transition:transform .5s var(--ease)}
+.scene>*{position:absolute}
+.phone{left:22%;top:0;width:224px;height:430px;border-radius:38px;background:#0b2a24;padding:9px;transform:translateZ(0);box-shadow:-24px 34px 50px -18px rgba(6,62,53,.55),0 0 0 2px #17463c inset}
+.screen{height:100%;border-radius:30px;background:#ece5dd;overflow:hidden;display:flex;flex-direction:column}
+.wh{background:var(--emerald);color:#fff;padding:.8rem .8rem .7rem;display:flex;gap:.55rem;align-items:center;font-size:.82rem;font-weight:700}
+.wh i{width:30px;height:30px;border-radius:50%;background:var(--mint);display:grid;place-items:center;color:var(--emerald)}
+.wh small{display:block;font-weight:500;opacity:.85;font-size:.68rem}
+.msgs{padding:.8rem .6rem;display:flex;flex-direction:column;gap:.5rem;font-size:.74rem;line-height:1.4}
+.m1,.m2{max-width:84%;padding:.5rem .65rem;border-radius:12px;box-shadow:0 1px 1px rgba(0,0,0,.12)}
+.m1{background:#d9fdd3;align-self:flex-end;border-top-right-radius:3px}
+.m2{background:#fff;border-top-left-radius:3px}
+.rx{background:#d9fdd3;align-self:flex-end;border-radius:12px;border-top-right-radius:3px;padding:.4rem;width:70%}
+.rx div{height:74px;border-radius:8px;background:repeating-linear-gradient(#fff 0 8px,#dfe9e3 8px 9px);display:grid;place-items:center;color:var(--green)}
+.card3{background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);border-radius:20px;box-shadow:var(--sh),0 30px 40px -20px rgba(6,62,53,.35);padding:.9rem 1rem;font-size:.82rem}
+.card3 b{display:block;color:var(--teal);font-size:.9rem}
+.card3 span{color:var(--muted)}
+.row{display:flex;gap:.7rem;align-items:center}
+.ico{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--green),var(--emerald));color:#fff;display:grid;place-items:center;flex:none}
+.c-order{left:-4%;top:46px;width:190px;transform:translateZ(90px);animation:fl 7s ease-in-out infinite}
+.c-rx{right:-6%;top:178px;width:176px;transform:translateZ(130px);animation:fl 8s ease-in-out -2s infinite}
+.c-av{left:2%;bottom:20px;width:200px;transform:translateZ(70px);animation:fl 9s ease-in-out -4s infinite}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 4px rgba(37,211,102,.25)}
+.pill{right:6%;top:30px;width:64px;height:26px;border-radius:99px;background:linear-gradient(90deg,var(--accent) 50%,#fff 50%);box-shadow:0 14px 18px -8px rgba(6,62,53,.45),0 0 0 1px rgba(6,62,53,.08);transform:translateZ(150px) rotate(-28deg);animation:fl 6s ease-in-out -1s infinite}
+.cross{right:10%;bottom:34px;width:54px;height:54px;color:var(--emerald);transform:translateZ(110px);filter:drop-shadow(0 14px 12px rgba(6,62,53,.35));animation:fl 7.5s ease-in-out -3s infinite}
+@keyframes fl{50%{translate:0 -12px}}
+
+/* timeline */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:2rem;position:relative;counter-reset:s}
+.steps li{position:relative;padding-left:5.2rem;min-height:84px}
+.steps::before,.steps::after{content:"";position:absolute;left:30px;top:30px;bottom:30px;width:3px;border-radius:3px;background:rgba(0,107,79,.15)}
+.steps::after{background:linear-gradient(var(--green),var(--accent));transform-origin:top;transform:scaleY(0);transition:transform 1.6s var(--ease)}
+.steps.in::after{transform:scaleY(1)}
+.num{position:absolute;left:0;top:0;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:1.3rem;color:#fff;background:radial-gradient(circle at 30% 25%,#3bd58a,var(--green) 45%,var(--emerald));box-shadow:0 12px 20px -8px rgba(0,107,79,.7),inset 0 -5px 8px rgba(0,0,0,.18),inset 0 3px 5px rgba(255,255,255,.4);z-index:1}
+.steps h3{margin-bottom:.35rem}.steps p{color:var(--muted)}
+.steps .ic{color:var(--green);margin-bottom:.4rem;width:1.6em;height:1.6em}
+.how-cta{margin-top:3rem}
+
+/* QR */
+.qr-sec{background:var(--white)}
+.qr-panel{display:grid;gap:2.5rem;align-items:center;border-radius:32px;padding:clamp(1.5rem,5vw,3.5rem);background:radial-gradient(70% 90% at 100% 0,rgba(0,150,83,.28),transparent 70%),linear-gradient(145deg,var(--teal),var(--emerald));color:#fff;box-shadow:var(--sh)}
+.qr-panel h2{color:#fff;margin-bottom:1rem}.qr-panel .lead{color:#d5ece2}
+.qr-card{justify-self:center;background:#fff;border-radius:28px;padding:1.2rem;width:min(340px,100%);box-shadow:0 40px 60px -28px rgba(0,0,0,.6),0 0 0 8px rgba(255,255,255,.12);color:var(--teal);text-align:center;transform:perspective(900px) rotateY(-6deg);transition:transform .5s var(--ease)}
+.qr-card:hover{transform:perspective(900px) rotateY(0)}
+.qr-box{background:#fff;padding:14px;aspect-ratio:1;display:grid;place-items:center;border:1px solid #e3ece7;border-radius:16px}
+.qr-box img{width:100%;height:100%;object-fit:contain;image-rendering:auto}
+.qr-ph{display:none;text-align:center;font-size:.85rem;padding:1rem;border:2px dashed #7aa395;border-radius:12px;color:var(--muted);width:100%;height:100%;align-content:center}
+.qr-ph code{display:block;margin-top:.4rem;font-size:.78rem;word-break:break-all;color:var(--teal)}
+.qr-box.miss img{display:none}.qr-box.miss .qr-ph{display:grid}
+.qr-meta{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.9rem;font-weight:800;letter-spacing:.02em}
+.qr-meta .ic{color:var(--wa);width:1.5em;height:1.5em}
+.note{font-size:.92rem;opacity:.9;margin:1.2rem 0 1.6rem;display:flex;gap:.6rem}
+.note .ic{margin-top:.2rem;color:var(--accent)}
+
+/* cards */
+.grid{display:grid;gap:1.25rem}
+.card{background:#fff;border:1px solid rgba(6,62,53,.09);border-radius:var(--r);padding:1.8rem;box-shadow:var(--sh);transition:transform .25s ease-out,box-shadow .35s;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));will-change:transform}
+.card:hover{box-shadow:0 2px 4px rgba(6,62,53,.06),0 22px 44px -12px rgba(6,62,53,.22)}
+.card .ico{margin-bottom:1.2rem;width:52px;height:52px;border-radius:16px}
+.card .ico .ic{width:26px;height:26px}
+.card p{color:var(--muted);margin-top:.5rem;font-size:1rem}
+.svc{background:linear-gradient(var(--off),#eef8f2)}
+
+/* builder */
+.opts{display:grid;gap:.8rem;margin-bottom:1.5rem}
+.opt{display:flex;align-items:center;gap:.8rem;text-align:left;padding:1rem 1.2rem;border-radius:18px;border:2px solid rgba(6,62,53,.12);background:#fff;font:700 1rem var(--font);color:var(--teal);cursor:pointer;min-height:64px;transition:all .3s var(--ease)}
+.opt:hover{border-color:var(--green);transform:translateY(-2px)}
+.opt[aria-selected=true]{border-color:var(--green);background:var(--mint);box-shadow:0 12px 24px -12px rgba(0,150,83,.55)}
+.opt .ic{color:var(--green)}
+.form{background:#fff;border-radius:var(--r);padding:clamp(1.4rem,4vw,2.4rem);box-shadow:var(--sh);border:1px solid rgba(6,62,53,.08)}
+.form[hidden],[hidden]{display:none!important}
+.form label{display:block;font-weight:700;margin-bottom:.5rem;color:var(--teal)}
+.form input,.form textarea{width:100%;font:500 1rem var(--font);padding:.95rem 1.1rem;border-radius:14px;border:2px solid #cfe0d7;background:var(--off);color:var(--ink);margin-bottom:.4rem}
+.form textarea{min-height:130px;resize:vertical}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 4px rgba(0,150,83,.18)}
+.err{color:#b3261e;font-weight:600;min-height:1.5em;font-size:.92rem;margin-bottom:.6rem}
+.hint{font-size:.9rem;color:var(--muted);margin-top:1rem}
+.safe{display:flex;gap:.6rem;font-size:.9rem;color:var(--muted);background:var(--off);border-radius:12px;padding:.8rem 1rem;margin-bottom:1.2rem}
+.safe .ic{color:var(--green);margin-top:.15rem}
+
+/* care */
+.care{background:var(--white)}
+.disc{margin-top:2rem;text-align:center;font-size:.95rem;color:var(--muted)}
+
+/* banner */
+.banner{padding:clamp(2rem,5vw,3rem) 0}
+.ban{position:relative;overflow:hidden;border-radius:32px;background:radial-gradient(50% 120% at 90% 0,rgba(0,150,83,.55),transparent 70%),radial-gradient(40% 80% at 0 100%,rgba(221,240,138,.18),transparent 70%),var(--teal);color:#fff;padding:clamp(2rem,6vw,4.5rem);display:grid;gap:2rem;align-items:center;box-shadow:var(--sh)}
+.ban h2{color:#fff;margin-bottom:1rem}.ban p.lead{color:#cfe8dd}
+.ban .tel{display:block;margin-top:1.1rem;font-weight:800;font-size:1.3rem;letter-spacing:.04em;color:var(--accent)}
+.ban-art{justify-self:center;perspective:900px}
+.ban-art .card3{width:230px;transform:rotateY(-14deg) rotateX(6deg);animation:fl 7s ease-in-out infinite}
+
+/* faq */
+.faq{max-width:820px;margin-inline:auto;display:grid;gap:.8rem}
+.qa{background:#fff;border:1px solid rgba(6,62,53,.1);border-radius:18px;box-shadow:0 8px 20px -14px rgba(6,62,53,.3)}
+.qa h3{font-size:1.05rem}
+.qa button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.15rem 1.4rem;cursor:pointer;font:700 1.05rem var(--font);color:var(--teal);border-radius:18px}
+.qa button:focus-visible{outline:3px solid var(--green);outline-offset:2px;box-shadow:none}
+.qa .ic{transition:transform .4s var(--ease);color:var(--green)}
+.qa button[aria-expanded=true] .ic{transform:rotate(45deg)}
+.pan{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
+.pan>div{overflow:hidden}.pan p{padding:0 1.4rem 1.3rem;color:var(--muted)}
+.pan.open{grid-template-rows:1fr}
+
+/* contact */
+.contact{background:var(--white)}
+.cbox{display:grid;gap:2rem;align-items:center;background:var(--off);border:1px solid rgba(6,62,53,.1);border-radius:32px;padding:clamp(1.5rem,5vw,3rem);box-shadow:var(--sh)}
+.cbox .qr-card{background:#fff;border:1px solid #e3ece7;box-shadow:var(--sh);width:min(280px,100%);transform:none}
+.big-tel{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;color:var(--emerald);margin:1rem 0 1.4rem;letter-spacing:.02em}
+.opt-info{font-size:.9rem;color:var(--muted);margin-top:1.2rem}
+/* Optional: add verified address / email / hours here as <p> rows when available. */
+
+/* footer */
+footer{background:var(--teal);color:#cfe3da;padding:4rem 0 7rem}
+.fg{display:grid;gap:2.5rem}
+footer .brand b{color:#fff}footer .brand small{color:#9fc4b6}
+footer h4{color:#fff;margin:0 0 .8rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+footer a{text-decoration:none}footer a:hover{color:var(--accent)}
+.fine{border-top:1px solid rgba(255,255,255,.14);margin-top:2.5rem;padding-top:1.5rem;font-size:.9rem;display:grid;gap:.5rem}
+.fine strong{color:#fff;letter-spacing:.06em}
+
+/* floating button */
+.fab{position:fixed;right:24px;bottom:24px;z-index:60;display:flex;align-items:center;gap:.7rem;flex-direction:row-reverse}
+.fab-b{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;color:#fff;text-decoration:none;background:linear-gradient(160deg,#4be585,#25D366 45%,#129c47);box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 -4px 8px rgba(0,0,0,.15) inset,0 10px 20px -4px rgba(18,156,71,.6),0 18px 34px -10px rgba(6,62,53,.5);transition:transform .3s var(--ease);animation:pulse 4s ease-out infinite;position:relative}
+.fab-b:hover{transform:translateY(-4px) scale(1.06)}
+.fab-b .ic{width:32px;height:32px}
+.fab-t{position:absolute;right:72px;white-space:nowrap;background:var(--teal);color:#fff;font-weight:700;font-size:.85rem;padding:.5rem .9rem;border-radius:10px;opacity:0;pointer-events:none;transform:translateX(6px);transition:.25s}
+.fab-b:hover .fab-t,.fab-b:focus-visible .fab-t{opacity:1;transform:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5),0 10px 20px -4px rgba(18,156,71,.6)}70%,100%{box-shadow:0 0 0 18px rgba(37,211,102,0),0 10px 20px -4px rgba(18,156,71,.6)}}
+.tip{background:#fff;border-radius:16px;box-shadow:var(--sh);padding:.7rem .5rem .7rem 1rem;display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:.9rem;color:var(--teal);max-width:230px}
+.tip button{border:0;background:var(--mint);color:var(--teal);width:30px;height:30px;border-radius:50%;cursor:pointer;display:grid;place-items:center;flex:none}
+.tip button .ic{width:16px;height:16px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:899px){
+  .burger{display:inline-flex}
+  nav{position:fixed;inset:72px 1rem auto 1rem;background:#fff;border-radius:22px;padding:.8rem;box-shadow:var(--sh);opacity:0;visibility:hidden;transform:translateY(-12px) scale(.98);transition:all .35s var(--ease)}
+  nav.open{opacity:1;visibility:visible;transform:none}
+  nav ul{flex-direction:column}nav a.l{padding:.9rem 1rem;font-size:1.05rem}
+  .nav-r .btn span.t{display:none}.nav-r .btn{padding:.55rem .9rem}
+  .brand small{display:none}
+  .fab{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+  .fab-b{width:54px;height:54px}.fab-b .ic{width:29px;height:29px}.fab-t{display:none}
+  .stage{min-height:420px}.scene{transform:rotateX(4deg) rotateY(-10deg);height:420px}
+  .pill,.cross{display:none}.c-order{left:-2%;width:160px}.c-rx{right:-2%;width:150px;top:190px}.c-av{width:170px}
+  .phone{left:24%;width:200px;height:400px}
+  .cta-row .btn{flex:1 1 100%}
+  .qr-sec{padding-top:3rem}
+}
+@media(min-width:600px){.opts{grid-template-columns:repeat(3,1fr)}.grid.g3{grid-template-columns:repeat(2,1fr)}.grid.g4{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){
+  .hero-g{grid-template-columns:1.05fr .95fr}
+  .stage{min-height:560px}.scene{width:430px;height:500px}.phone{width:244px;height:470px}
+  .steps{grid-template-columns:repeat(4,1fr);gap:1.5rem}
+  .steps li{padding:5rem 0 0}
+  .steps::before,.steps::after{left:31px;right:0;top:30px;bottom:auto;width:auto;height:3px;transform-origin:left}
+  .steps::after{transform:scaleX(0)}.steps.in::after{transform:scaleX(1)}
+  .steps li:last-child::after{content:"";position:absolute;left:0;top:0;width:100%;height:0}
+  .qr-panel{grid-template-columns:1.2fr .8fr}
+  .grid.g3{grid-template-columns:repeat(3,1fr)}.grid.g4{grid-template-columns:repeat(4,1fr)}
+  .ban{grid-template-columns:1.4fr .6fr}
+  .cbox{grid-template-columns:1.2fr .8fr}
+  .fg{grid-template-columns:1.6fr 1fr 1fr}
+}
+@media(min-width:1500px){html{font-size:112%}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}.steps::after{transform:none!important}
+}
+</style>
+</head>
+<body>
+<!-- Icon sprite (Lucide-style line icons) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+<symbol id="doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+<symbol id="pill" viewBox="0 0 24 24"><path d="m10.5 20.5-7-7a4.95 4.95 0 0 1 7-7l7 7a4.95 4.95 0 0 1-7 7z"/><path d="m8.5 8.5 7 7"/></symbol>
+<symbol id="chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.7 7.1L3 21l1.9-6.3A8 8 0 1 1 21 12z"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="truck" viewBox="0 0 24 24"><path d="M14 18V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11h2M14 9h4l4 4v4h-2M10 18H8"/><circle cx="6.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></symbol>
+<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+<symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+<symbol id="qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h3M20 17v4"/></symbol>
+<symbol id="phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></symbol>
+<symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+<symbol id="menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></symbol>
+<symbol id="lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+<symbol id="logo" viewBox="0 0 48 48"><rect width="48" height="48" rx="14" fill="#006B4F"/><path d="M20 9h8v11h11v8H28v11h-8V28H9v-8h11z" fill="#fff"/><path d="M33 8c-6 0-11 4-11 10 6 0 11-4 11-10z" fill="#DDF08A"/></symbol>
+</svg>
+
+<header id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#home" aria-label="Pooja Medicare home">
+      <svg width="44" height="44" aria-hidden="true"><use href="#logo"/></svg>
+      <span><b>POOJA MEDICARE</b><small>Your Health, Our Care.</small></span>
+    </a>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a class="l" href="#home">Home</a></li>
+        <li><a class="l" href="#how">How It Works</a></li>
+        <li><a class="l" href="#services">Our Services</a></li>
+        <li><a class="l" href="#faq">FAQs</a></li>
+        <li><a class="l" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-r">
+      <a class="btn btn-wa wa" href="#" target="_blank" rel="noopener noreferrer"><svg class="ic fill"><use href="#wa"/></svg><span class="t">Order on&nbsp;</span>WhatsApp</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><svg class="ic m"><use href="#menu"/></svg><svg class="ic x"><use href="#x"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="home">
+  <div class="wrap hero-g">
+    <div>
+      <span class="eyebrow">YOUR HEALTH, OUR CARE</span>
+      <h1>Your Medicines.<br>One WhatsApp Away.</h1>
+      <p class="lead">Ordering medicines should be simple. Send your prescription or medicine name to Pooja Medicare on WhatsApp, and our team will help you with availability and delivery options.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa wa" href="#" target="_blank" rel="noopener noreferrer"><svg class="ic fill"><use href="#wa"/></svg>Order on WhatsApp</a>
+        <a class="btn btn-ghost" href="#how">How It Works</a>
+      </div>
+      <ul class="ben">
+        <li><svg class="ic"><use href="#doc"/></svg>Easy Prescription Sharing</li>
+        <li><svg class="ic"><use href="#user"/></svg>Personal Assistance</li>
+        <li><svg class="ic"><use href="#truck"/></svg>Delivery Options Available</li>
+      </ul>
+    </div>
+    <div class="stage" id="stage" aria-hidden="true">
+      <div class="scene" id="scene">
+        <div class="phone"><div class="screen">
+          <div class="wh"><i><svg class="ic"><use href="#logo"/></svg></i><div>Pooja Medicare<small>WhatsApp chat</small></div></div>
+          <div class="msgs">
+            <div class="m1">Hello Pooja Medicare! I would like to order medicines. Please assist me.</div>
+            <div class="rx"><div><svg class="ic" style="width:28px;height:28px"><use href="#doc"/></svg></div></div>
+            <div class="m2">Thanks! Our team will check availability and confirm delivery options.</div>
+          </div>
+        </div></div>
+        <div class="card3 c-order"><div class="row"><span class="ico"><svg class="ic"><use href="#pill"/></svg></span><div><b>Medicine order</b><span>Start on WhatsApp</span></div></div></div>
+        <div class="card3 c-rx"><div class="row"><span class="ico"><svg class="ic"><use href="#doc"/></svg></span><div><b>Prescription</b><span>Share in chat</span></div></div></div>
+        <div class="card3 c-av"><div class="row"><span class="dot"></span><div><b>Availability check</b><span>Confirmed by our team</span></div></div></div>
+        <div class="pill"></div>
+        <svg class="cross" viewBox="0 0 48 48"><path d="M19 4h10v15h15v10H29v15H19V29H4V19h15z" fill="currentColor"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="head center rv"><h2>Your Medicine Order, Made Simple.</h2><p class="lead">Four simple steps from enquiry to order confirmation.</p></div>
+    <ol class="steps" id="steps">
+      <li class="rv"><span class="num">1</span><svg class="ic"><use href="#qr"/></svg><h3>Start a Chat</h3><p>Scan the QR code or tap the WhatsApp button.</p></li>
+      <li class="rv"><span class="num">2</span><svg class="ic"><use href="#doc"/></svg><h3>Share Your Prescription</h3><p>Send a prescription photo, medicine name, or voice message.</p></li>
+      <li class="rv"><span class="num">3</span><svg class="ic"><use href="#search"/></svg><h3>Check Availability</h3><p>Our team checks the requested medicines and responds within five minutes during business hours when available to do so.</p></li>
+      <li class="rv"><span class="num">4</span><svg class="ic"><use href="#check"/></svg><h3>Confirm Your Order</h3><p>We confirm medicine availability and delivery options before processing the order.</p></li>
+    </ol>
+    <div class="how-cta center rv"><a class="btn btn-wa wa" href="#" target="_blank" rel="noopener noreferrer"><svg class="ic fill"><use href="#wa"/></svg>Start on WhatsApp</a></div>
+  </div>
+</section>
+
+<section class="qr-sec" id="qr">
+  <div class="wrap">
+    <div class="qr-panel rv">
+      <div>
+        <h2>Scan. Chat. Order.</h2>
+        <p class="lead">Scan the QR code with your phone to start a conversation with Pooja Medicare on WhatsApp.</p>
+        <p class="note"><svg class="ic"><use href="#info"/></svg><span>WhatsApp opens with a message already written. Tap <strong>Send</strong> to start the conversation.</span></p>
+        <a class="btn btn-light wa" href="#" target="_blank" rel="noopener noreferrer"><svg class="ic fill" style="color:#1da851"><use href="#wa"/></svg>Open WhatsApp Chat</a>
+      </div>
+      <div class="qr-card">
+        <div class="qr-box">
+          <img class="qr" src="pwh.png" width="400" height="400" alt="Pooja Medicare WhatsApp QR code. Scan to start a chat." loading="lazy">
+          
+        </div>
+        <div class="qr-meta"><svg class="ic fill"><use href="#wa"/></svg>8332915695</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">OUR SERVICES</span><h2 style="margin-top:1rem">Everything starts with a message.</h2></div>
+    <div class="grid g3">
+      <article class="card rv" data-tilt><span class="ico"><svg class="ic"><use href="#doc"/></svg></span><h3>Prescription Orders</h3><p>Share your prescription with our team on WhatsApp.</p></article>
+      <article class="card rv" data-tilt><span class="ico"><svg class="ic"><use href="#pill"/></svg></span><h3>Medicine Enquiries</h3><p>Send a medicine name to check availability.</p></article>
+      <article class="card rv" data-tilt><span class="ico"><svg class="ic"><use href="#user"/></svg></span><h3>Personal Assistance</h3><p>Get help from our pharmacy team with your enquiry.</p></article>
+      <article class="card rv" data-tilt><span class="ico"><svg class="ic"><use href="#check"/></svg></span><h3>Availability Confirmation</h3><p>We will confirm whether the requested medicines are available.</p></article>
+      <article class="card rv" data-tilt><span class="ico"><svg class="ic"><use href="#truck"/></svg></span><h3>Delivery Enquiries</h3><p>Ask our team about available delivery options.</p></article>
+      <article class="card rv" data-tilt><span class="ico"><svg class="ic"><use href="#chat"/></svg></span><h3>Easy WhatsApp Ordering</h3><p>Start your enquiry without creating an account on the website.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="order">
+  <div class="wrap" style="max-width:860px">
+    <div class="head center rv"><h2>What Would You Like to Order?</h2><p class="lead">Choose an option. We will open WhatsApp with your message ready to send.</p></div>
+    <div class="opts" role="tablist" aria-label="Order type">
+      <button class="opt" role="tab" id="t-rx" aria-selected="false" aria-controls="f-rx"><svg class="ic"><use href="#doc"/></svg>Prescription</button>
+      <button class="opt" role="tab" id="t-med" aria-selected="false" aria-controls="f-med"><svg class="ic"><use href="#pill"/></svg>Medicine Name</button>
+      <button class="opt" role="tab" id="t-gen" aria-selected="false" aria-controls="f-gen"><svg class="ic"><use href="#chat"/></svg>General Enquiry</button>
+    </div>
+    <div class="form" id="f-rx" role="tabpanel" aria-labelledby="t-rx" hidden>
+      <p class="safe"><svg class="ic"><use href="#lock"/></svg><span>Do not upload your prescription here. Send the photo directly in the WhatsApp chat after it opens.</span></p>
+      <p>Tap the button, then attach your prescription photo in WhatsApp and press Send.</p>
+      <p style="margin-top:1.2rem"><button class="btn btn-wa" data-go="rx" type="button"><svg class="ic fill"><use href="#wa"/></svg>Continue on WhatsApp</button></p>
+    </div>
+    <form class="form" id="f-med" role="tabpanel" aria-labelledby="t-med" hidden novalidate>
+      <label for="med">Medicine name</label>
+      <input id="med" name="med" type="text" maxlength="200" autocomplete="off" placeholder="Type the medicine name" aria-describedby="e-med">
+      <p class="err" id="e-med" role="alert"></p>
+      <button class="btn btn-wa" data-go="med" type="submit"><svg class="ic fill"><use href="#wa"/></svg>Continue on WhatsApp</button>
+    </form>
+    <form class="form" id="f-gen" role="tabpanel" aria-labelledby="t-gen" hidden novalidate>
+      <label for="gen">Your message</label>
+      <textarea id="gen" name="gen" maxlength="600" placeholder="Type your question for our team" aria-describedby="e-gen"></textarea>
+      <p class="err" id="e-gen" role="alert"></p>
+      <button class="btn btn-wa" data-go="gen" type="submit"><svg class="ic fill"><use href="#wa"/></svg>Ask on WhatsApp</button>
+    </form>
+    <p class="hint center" id="hint" hidden>WhatsApp will open with your message ready. Nothing is sent until you tap <strong>Send</strong> there. Please do not type personal medical details on this page; this form does not store your text.</p>
+  </div>
+</section>
+
+<section class="care" id="care">
+  <div class="wrap">
+    <div class="head center rv"><h2>Care That Puts You First.</h2></div>
+    <div class="grid g4">
+      <article class="card rv"><span class="ico"><svg class="ic"><use href="#chat"/></svg></span><h3>Convenient Ordering</h3><p>Start from the phone you already use, with no website account.</p></article>
+      <article class="card rv"><span class="ico"><svg class="ic"><use href="#user"/></svg></span><h3>Personal Assistance</h3><p>A member of our team handles your enquiry.</p></article>
+      <article class="card rv"><span class="ico"><svg class="ic"><use href="#check"/></svg></span><h3>Clear Availability Confirmation</h3><p>We tell you what is available before you decide.</p></article>
+      <article class="card rv"><span class="ico"><svg class="ic"><use href="#truck"/></svg></span><h3>Delivery Information Before Confirmation</h3><p>Delivery options are confirmed before processing.</p></article>
+    </div>
+    <p class="disc rv">Medicine availability and delivery options are subject to confirmation. This website does not provide medical advice, diagnosis, prescriptions or emergency care.</p>
+  </div>
+</section>
+
+<section class="banner" aria-labelledby="bt">
+  <div class="wrap">
+    <div class="ban rv">
+      <div>
+        <h2 id="bt">Need Medicines? Let’s Make It Simple.</h2>
+        <p class="lead">Send your prescription or medicine enquiry to Pooja Medicare on WhatsApp.</p>
+        <p style="margin-top:1.6rem"><a class="btn btn-light wa" href="#" target="_blank" rel="noopener noreferrer"><svg class="ic fill" style="color:#1da851"><use href="#wa"/></svg>Start Your WhatsApp Order</a></p>
+        <span class="tel">8332915695</span>
+      </div>
+      <div class="ban-art" aria-hidden="true"><div class="card3"><div class="row"><span class="ico"><svg class="ic"><use href="#pill"/></svg></span><div><b>Medicine order</b><span>Prescription or name</span></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head center rv"><h2>Frequently Asked Questions</h2></div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="cbox rv">
+      <div>
+        <a class="brand" href="#home" aria-label="Pooja Medicare"><svg width="56" height="56" aria-hidden="true"><use href="#logo"/></svg><span><b style="font-size:1.25rem">POOJA MEDICARE</b><small>Your Health, Our Care.</small></span></a>
+        <p class="big-tel">WhatsApp: 8332915695</p>
+        <a class="btn btn-wa wa" href="#" target="_blank" rel="noopener noreferrer"><svg class="ic fill"><use href="#wa"/></svg>Chat on WhatsApp</a>
+        <p class="opt-info">Address, email and business hours will appear here once verified details are added.</p>
+      </div>
+      <div class="qr-card">
+        <div class="qr-box">
+          <img class="qr" src="pwh.png" width="400" height="400" alt="Pooja Medicare WhatsApp QR code" loading="lazy">
+        </div>
+        <div class="qr-meta"><svg class="ic fill"><use href="#wa"/></svg>Scan to chat</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <a class="brand" href="#home"><svg width="44" height="44" aria-hidden="true"><use href="#logo"/></svg><span><b>POOJA MEDICARE</b><small>Your Health, Our Care.</small></span></a>
+        <p style="margin-top:1rem;max-width:42ch">A pharmacy that helps customers order medicines through WhatsApp. Trusted Pharmacy for a Healthier Tomorrow.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#home">Home</a></li><li><a href="#how">How It Works</a></li><li><a href="#services">Our Services</a></li><li><a href="#faq">FAQs</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a class="wa" href="#" target="_blank" rel="noopener noreferrer">WhatsApp: 8332915695</a></li></ul></div>
+    </div>
+    <div class="fine">
+      <strong>POOJA MEDICARE — YOUR HEALTH, OUR CARE.</strong>
+      <span>Medicine availability and delivery options are subject to confirmation.</span>
+      <span>&copy; <span id="yr">2026</span> Pooja Medicare. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab" id="fab">
+  <a class="fab-b wa" href="#" target="_blank" rel="noopener noreferrer" aria-label="Chat with Pooja Medicare on WhatsApp"><svg class="ic fill"><use href="#wa"/></svg><span class="fab-t" aria-hidden="true">Order on WhatsApp</span></a>
+  <div class="tip" id="tip" hidden><span>Need medicines? Chat with us.</span><button type="button" id="tipX" aria-label="Dismiss message"><svg class="ic"><use href="#x"/></svg></button></div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  /* ===== CONFIG: change these in one place ===== */
+  var PHONE='918332915695';
+  var DEFAULT_MSG='Hello Pooja Medicare! I would like to order medicines. Please assist me.';
+  /* ============================================= */
+  function wa(msg){return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg||DEFAULT_MSG);}
+  var $=function(s,r){return (r||document).querySelector(s);},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s));};
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  $$('a.wa').forEach(function(a){a.href=wa();});
+  $('#yr').textContent=new Date().getFullYear();
+
+  /* sticky header */
+  var hd=$('#top');function onS(){hd.classList.toggle('solid',window.scrollY>20);}
+  window.addEventListener('scroll',onS,{passive:true});onS();
+
+  /* mobile nav */
+  var bg=$('#burger'),nav=$('#nav');
+  function setNav(o){nav.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  bg.addEventListener('click',function(){setNav(!nav.classList.contains('open'));});
+  $$('a.l',nav).forEach(function(a){a.addEventListener('click',function(){setNav(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){setNav(false);}});
+  document.addEventListener('click',function(e){if(!nav.contains(e.target)&&!bg.contains(e.target)){setNav(false);}});
+  window.addEventListener('resize',function(){if(window.innerWidth>899){setNav(false);}});
+
+  /* scroll reveal */
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15}):null;
+  $$('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in');});
+  var st=$('#steps');if(io){io.observe(st);}else{st.classList.add('in');}
+
+  /* hero parallax + card tilt (fine pointers only) */
+  var fine=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(fine&&!reduce){
+    var stage=$('#stage'),sc=$('#scene');
+    stage.addEventListener('pointermove',function(e){var r=stage.getBoundingClientRect();sc.style.setProperty('--tx',((e.clientX-r.left)/r.width-.5)*14+'deg');sc.style.setProperty('--ty',((e.clientY-r.top)/r.height-.5)*-10+'deg');});
+    stage.addEventListener('pointerleave',function(){sc.style.setProperty('--tx','0deg');sc.style.setProperty('--ty','0deg');});
+    $$('[data-tilt]').forEach(function(c){
+      c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');c.style.setProperty('--rx',((e.clientY-r.top)/r.height-.5)*-10+'deg');});
+      c.addEventListener('pointerleave',function(){c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg');});
+    });
+  }
+
+  /* QR fallback */
+  $$('img.qr').forEach(function(img){
+    function miss(){img.parentNode.classList.add('miss');}
+    img.addEventListener('error',miss);
+    if(img.complete&&img.naturalWidth===0&&img.getAttribute('src')){img.loading='eager';setTimeout(function(){if(img.complete&&img.naturalWidth===0){miss();}},1200);}
+  });
+
+  /* FAQ */
+  var QA=[
+    ['How do I order medicines?','Open our WhatsApp chat and send your prescription photo, medicine name, or voice message.'],
+    ['Can I send a prescription photo?','Yes. You can share your prescription directly in our WhatsApp conversation.'],
+    ['How quickly will your team respond?','Our target is to respond within five minutes during business hours. Actual response time may vary.'],
+    ['Can I check medicine availability?','Yes. Send the medicine name and our team will check availability.'],
+    ['Is home delivery available?','Contact us on WhatsApp to confirm the delivery options available for your location.'],
+    ['Do I need to create a website account?','No website account is needed to start an enquiry through WhatsApp.'],
+    ['How do I start a WhatsApp conversation?','Scan our QR code or tap one of the WhatsApp buttons. Review the pre-filled message and tap Send.']
+  ];
+  var fl=$('#faqList');
+  QA.forEach(function(q,i){
+    var d=document.createElement('div');d.className='qa';
+    d.innerHTML='<h3><button type="button" id="q'+i+'" aria-expanded="false" aria-controls="a'+i+'"><span></span><svg class="ic"><use href="#plus"/></svg></button></h3><div class="pan" id="a'+i+'" role="region" aria-labelledby="q'+i+'"><div><p></p></div></div>';
+    $('span',d).textContent=q[0];$('p',d).textContent=q[1];fl.appendChild(d);
+    $('button',d).addEventListener('click',function(){
+      var b=this,o=b.getAttribute('aria-expanded')==='true';
+      b.setAttribute('aria-expanded',!o);$('#a'+i).classList.toggle('open',!o);
+    });
+  });
+
+  /* order builder */
+  var tabs=$$('.opt'),panels={rx:$('#f-rx'),med:$('#f-med'),gen:$('#f-gen')},hint=$('#hint');
+  function pick(k){
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.id==='t-'+k);t.tabIndex=t.id==='t-'+k?0:-1;});
+    Object.keys(panels).forEach(function(p){panels[p].hidden=p!==k;});hint.hidden=false;
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){pick(t.id.slice(2));});
+    t.addEventListener('keydown',function(e){
+      var n=e.key==='ArrowRight'?(i+1)%3:e.key==='ArrowLeft'?(i+2)%3:-1;
+      if(n>-1){e.preventDefault();tabs[n].focus();tabs[n].click();}
+    });
+  });
+  function go(msg){window.open(wa(msg),'_blank','noopener');}
+  $('[data-go=rx]').addEventListener('click',function(){go(DEFAULT_MSG+' I would like to share my prescription.');});
+  function bind(form,id,errId,empty,build){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();var f=$(id),v=f.value.trim(),er=$(errId);
+      if(!v){er.textContent=empty;f.setAttribute('aria-invalid','true');f.focus();return;}
+      er.textContent='';f.removeAttribute('aria-invalid');go(build(v));
+    });
+    $(id).addEventListener('input',function(){$(errId).textContent='';});
+  }
+  bind(panels.med,'#med','#e-med','Please enter a medicine name.',function(v){return 'Hello Pooja Medicare! I would like to check availability of this medicine: '+v;});
+  bind(panels.gen,'#gen','#e-gen','Please type your message.',function(v){return 'Hello Pooja Medicare! I have an enquiry: '+v;});
+
+  /* floating button tip: shown once per browser session unless dismissed */
+  var tip=$('#tip'),seen=false;
+  try{seen=sessionStorage.getItem('pm_tip')==='1';}catch(e){}
+  function hideTip(){tip.hidden=true;try{sessionStorage.setItem('pm_tip','1');}catch(e){}}
+  if(!seen){setTimeout(function(){tip.hidden=false;setTimeout(hideTip,9000);},3500);}
+  $('#tipX').addEventListener('click',hideTip);
+})();
+</script>
+</body>
+</html>
