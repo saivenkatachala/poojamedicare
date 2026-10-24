@@ -14,7 +14,7 @@
 <link rel="icon" href="billlogo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Pharmacy","name":"Pooja Medicare","slogan":"Your Health, Our Care.","telephone":"+918332915695"}</script>
 <style>
 :root{
@@ -22,7 +22,7 @@
   --ink:#0d2a24;--muted:#4b6860;--wa:#25D366;
   --r:24px;--r-sm:14px;--ease:cubic-bezier(.22,.8,.24,1);
   --sh:0 1px 2px rgba(6,62,53,.06),0 8px 24px -6px rgba(6,62,53,.12),0 24px 48px -16px rgba(6,62,53,.14);
-  --font:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --font:'Manrope','Noto Sans Telugu','Noto Sans Tamil','Noto Sans Devanagari',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
@@ -257,6 +257,27 @@ footer a{text-decoration:none}footer a:hover{color:var(--accent)}
   *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
   .rv{opacity:1;transform:none}.steps::after{transform:none!important}
 }
+
+/* language switcher */
+.lang-w{position:relative;display:inline-flex;align-items:center}
+.lang-w .ic{position:absolute;left:.8rem;pointer-events:none;color:var(--emerald);width:1.1em;height:1.1em}
+select.lang{appearance:none;-webkit-appearance:none;-moz-appearance:none;font:700 .92rem var(--font);color:var(--teal);background-color:#fff;border:1px solid rgba(6,62,53,.18);border-radius:99px;min-height:44px;padding:.5rem 2.1rem .5rem 2.4rem;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23063E35' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .85rem center;transition:border-color .2s,background-color .2s}
+select.lang:hover{border-color:var(--green);background-color:var(--mint)}
+.lang-li{display:none}
+/* Indic scripts need more line height and no negative tracking */
+html:not([lang=en]) h1,html:not([lang=en]) h2,html:not([lang=en]) h3{line-height:1.3;letter-spacing:0}
+html:not([lang=en]) h1{font-size:clamp(2.1rem,5.6vw,3.9rem)}
+html:not([lang=en]) .eyebrow{letter-spacing:.02em}
+html:not([lang=en]) body{line-height:1.7}
+@media(min-width:900px) and (max-width:1180px){
+  html:not([lang=en]) nav a.l{padding:.5rem .6rem;font-size:.88rem}
+  html:not([lang=en]) .brand small{display:none}
+}
+@media(max-width:899px){
+  .lang-d{display:none}
+  .lang-li{display:block;padding:.3rem .4rem .2rem}
+  .lang-li .lang-w,.lang-li select.lang{width:100%}
+}
 </style>
 </head>
 <body>
@@ -278,6 +299,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--accent)}
 <symbol id="menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
 <symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></symbol>
 <symbol id="lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+<symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
 <symbol id="logo" viewBox="0 0 48 48"><rect width="48" height="48" rx="14" fill="#006B4F"/><path d="M20 9h8v11h11v8H28v11h-8V28H9v-8h11z" fill="#fff"/><path d="M33 8c-6 0-11 4-11 10 6 0 11-4 11-10z" fill="#DDF08A"/></symbol>
 </svg>
 
@@ -294,9 +316,11 @@ footer a{text-decoration:none}footer a:hover{color:var(--accent)}
         <li><a class="l" href="#services">Our Services</a></li>
         <li><a class="l" href="#faq">FAQs</a></li>
         <li><a class="l" href="#contact">Contact</a></li>
+        <li class="lang-li"><span class="lang-w "><svg class="ic" aria-hidden="true"><use href="#globe"/></svg><select class="lang" aria-label="Language"><option value="en">English</option><option value="te">తెలుగు</option><option value="ta">தமிழ்</option><option value="hi">हिन्दी</option></select></span></li>
       </ul>
     </nav>
     <div class="nav-r">
+      <span class="lang-w lang-d"><svg class="ic" aria-hidden="true"><use href="#globe"/></svg><select class="lang" aria-label="Language"><option value="en">English</option><option value="te">తెలుగు</option><option value="ta">தமிழ்</option><option value="hi">हिन्दी</option></select></span>
       <a class="btn btn-wa wa" href="#" target="_blank" rel="noopener noreferrer"><svg class="ic fill"><use href="#wa"/></svg><span class="t">Order on&nbsp;</span>WhatsApp</a>
       <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><svg class="ic m"><use href="#menu"/></svg><svg class="ic x"><use href="#x"/></svg></button>
     </div>
@@ -359,7 +383,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--accent)}
       <div>
         <h2>Scan. Chat. Order.</h2>
         <p class="lead">Scan the QR code with your phone to start a conversation with Pooja Medicare on WhatsApp.</p>
-        <p class="note"><svg class="ic"><use href="#info"/></svg><span>WhatsApp opens with a message already written. Tap <strong>Send</strong> to start the conversation.</span></p>
+        <p class="note"><svg class="ic"><use href="#info"/></svg><span data-h="note">WhatsApp opens with a message already written. Tap <strong>Send</strong> to start the conversation.</span></p>
         <a class="btn btn-light wa" href="#" target="_blank" rel="noopener noreferrer"><svg class="ic fill" style="color:#1da851"><use href="#wa"/></svg>Open WhatsApp Chat</a>
       </div>
       <div class="qr-card">
@@ -412,7 +436,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--accent)}
       <p class="err" id="e-gen" role="alert"></p>
       <button class="btn btn-wa" data-go="gen" type="submit"><svg class="ic fill"><use href="#wa"/></svg>Ask on WhatsApp</button>
     </form>
-    <p class="hint center" id="hint" hidden>WhatsApp will open with your message ready. Nothing is sent until you tap <strong>Send</strong> there. Please do not type personal medical details on this page; this form does not store your text.</p>
+    <p class="hint center" id="hint" data-h="hint" hidden>WhatsApp will open with your message ready. Nothing is sent until you tap <strong>Send</strong> there. Please do not type personal medical details on this page; this form does not store your text.</p>
   </div>
 </section>
 
@@ -500,7 +524,13 @@ footer a{text-decoration:none}footer a:hover{color:var(--accent)}
   var PHONE='918332915695';
   var DEFAULT_MSG='Hello Pooja Medicare! I would like to order medicines. Please assist me.';
   /* ============================================= */
-  function wa(msg){return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg||DEFAULT_MSG);}
+  /* ===== translations: English key -> [Telugu, Tamil, Hindi] ===== */
+  var D={"Pooja Medicare | Order Medicines on WhatsApp": ["Pooja Medicare | WhatsApp లో మందులు ఆర్డర్ చేయండి", "Pooja Medicare | WhatsApp-இல் மருந்துகளை ஆர்டர் செய்யுங்கள்", "Pooja Medicare | WhatsApp पर दवाइयाँ ऑर्डर करें"], "Pooja Medicare is a pharmacy that makes ordering medicines simple. Send your prescription, medicine name or voice message on WhatsApp and our team will help with availability and delivery options.": ["Pooja Medicare మందుల ఆర్డరింగ్‌ను సులభం చేసే ఫార్మసీ. మీ ప్రిస్క్రిప్షన్, మందు పేరు లేదా వాయిస్ మెసేజ్‌ను WhatsApp లో పంపండి; లభ్యత మరియు డెలివరీ ఎంపికలలో మా బృందం సహాయం చేస్తుంది.", "Pooja Medicare மருந்துகளை ஆர்டர் செய்வதை எளிதாக்கும் மருந்தகம். உங்கள் மருந்துச் சீட்டு, மருந்தின் பெயர் அல்லது குரல் செய்தியை WhatsApp-இல் அனுப்புங்கள்; கிடைக்கும் தன்மை மற்றும் டெலிவரி வசதிகளில் எங்கள் குழு உதவும்.", "Pooja Medicare एक फ़ार्मेसी है जो दवाइयाँ ऑर्डर करना आसान बनाती है। WhatsApp पर अपना प्रिस्क्रिप्शन, दवा का नाम या वॉइस मैसेज भेजें, और हमारी टीम उपलब्धता व डिलीवरी विकल्पों में मदद करेगी।"], "Your Health, Our Care. Send your prescription or medicine name on WhatsApp.": ["మీ ఆరోగ్యం, మా బాధ్యత. WhatsApp లో మీ ప్రిస్క్రిప్షన్ లేదా మందు పేరు పంపండి.", "உங்கள் ஆரோக்கியம், எங்கள் அக்கறை. WhatsApp-இல் உங்கள் மருந்துச் சீட்டு அல்லது மருந்தின் பெயரை அனுப்புங்கள்.", "आपकी सेहत, हमारी देखभाल। WhatsApp पर अपना प्रिस्क्रिप्शन या दवा का नाम भेजें।"], "Home": ["హోమ్", "முகப்பு", "होम"], "How It Works": ["ఎలా పనిచేస్తుంది", "செயல்படும் விதம்", "कैसे काम करता है"], "Our Services": ["మా సేవలు", "எங்கள் சேவைகள்", "हमारी सेवाएँ"], "FAQs": ["ప్రశ్నలు", "கேள்விகள்", "प्रश्नोत्तर"], "Contact": ["సంప్రదించండి", "தொடர்பு", "संपर्क"], "Order on": ["ఆర్డర్:", "ஆர்டர்:", "ऑर्डर:"], "Your Health, Our Care.": ["మీ ఆరోగ్యం, మా బాధ్యత.", "உங்கள் ஆரோக்கியம், எங்கள் அக்கறை.", "आपकी सेहत, हमारी देखभाल।"], "YOUR HEALTH, OUR CARE": ["మీ ఆరోగ్యం, మా బాధ్యత", "உங்கள் ஆரோக்கியம், எங்கள் அக்கறை", "आपकी सेहत, हमारी देखभाल"], "Your Medicines.": ["మీ మందులు.", "உங்கள் மருந்துகள்.", "आपकी दवाइयाँ।"], "One WhatsApp Away.": ["ఒక్క WhatsApp దూరంలో.", "ஒரே WhatsApp தொலைவில்.", "बस एक WhatsApp दूर।"], "Ordering medicines should be simple. Send your prescription or medicine name to Pooja Medicare on WhatsApp, and our team will help you with availability and delivery options.": ["మందులు ఆర్డర్ చేయడం సులభంగా ఉండాలి. మీ ప్రిస్క్రిప్షన్ లేదా మందు పేరును WhatsApp ద్వారా Pooja Medicare కు పంపండి; లభ్యత మరియు డెలివరీ ఎంపికలలో మా బృందం మీకు సహాయం చేస్తుంది.", "மருந்துகளை ஆர்டர் செய்வது எளிமையாக இருக்க வேண்டும். உங்கள் மருந்துச் சீட்டு அல்லது மருந்தின் பெயரை WhatsApp வழியாக Pooja Medicare-க்கு அனுப்புங்கள்; கிடைக்கும் தன்மை மற்றும் டெலிவரி வசதிகள் குறித்து எங்கள் குழு உங்களுக்கு உதவும்.", "दवाइयाँ ऑर्डर करना आसान होना चाहिए। अपना प्रिस्क्रिप्शन या दवा का नाम WhatsApp पर Pooja Medicare को भेजें, और हमारी टीम उपलब्धता तथा डिलीवरी विकल्पों में आपकी मदद करेगी।"], "Order on WhatsApp": ["WhatsApp లో ఆర్డర్ చేయండి", "WhatsApp-இல் ஆர்டர் செய்யுங்கள்", "WhatsApp पर ऑर्डर करें"], "Easy Prescription Sharing": ["సులభంగా ప్రిస్క్రిప్షన్ షేరింగ్", "எளிதாக மருந்துச் சீட்டு பகிர்வு", "आसान प्रिस्क्रिप्शन साझा करना"], "Personal Assistance": ["వ్యక్తిగత సహాయం", "தனிப்பட்ட உதவி", "व्यक्तिगत सहायता"], "Delivery Options Available": ["డెలివరీ ఎంపికలు అందుబాటులో ఉన్నాయి", "டெலிவரி வசதிகள் உள்ளன", "डिलीवरी विकल्प उपलब्ध"], "WhatsApp chat": ["WhatsApp చాట్", "WhatsApp அரட்டை", "WhatsApp चैट"], "Hello Pooja Medicare! I would like to order medicines. Please assist me.": ["నమస్కారం Pooja Medicare! నేను మందులు ఆర్డర్ చేయాలనుకుంటున్నాను. దయచేసి సహాయం చేయండి.", "வணக்கம் Pooja Medicare! நான் மருந்துகளை ஆர்டர் செய்ய விரும்புகிறேன். தயவுசெய்து உதவுங்கள்.", "नमस्ते Pooja Medicare! मुझे दवाइयाँ ऑर्डर करनी हैं। कृपया मेरी सहायता करें।"], "Thanks! Our team will check availability and confirm delivery options.": ["ధన్యవాదాలు! మా బృందం లభ్యతను తనిఖీ చేసి డెలివరీ ఎంపికలను నిర్ధారిస్తుంది.", "நன்றி! எங்கள் குழு கிடைக்கும் தன்மையைச் சரிபார்த்து டெலிவரி வசதிகளை உறுதிப்படுத்தும்.", "धन्यवाद! हमारी टीम उपलब्धता जाँचेगी और डिलीवरी विकल्पों की पुष्टि करेगी।"], "Medicine order": ["మందుల ఆర్డర్", "மருந்து ஆர்டர்", "दवा ऑर्डर"], "Start on WhatsApp": ["WhatsApp లో ప్రారంభించండి", "WhatsApp-இல் தொடங்குங்கள்", "WhatsApp पर शुरू करें"], "Prescription": ["ప్రిస్క్రిప్షన్", "மருந்துச் சீட்டு", "प्रिस्क्रिप्शन"], "Share in chat": ["చాట్‌లో షేర్ చేయండి", "அரட்டையில் பகிருங்கள்", "चैट में साझा करें"], "Availability check": ["లభ్యత తనిఖీ", "கிடைக்கும் தன்மை சோதனை", "उपलब्धता जाँच"], "Confirmed by our team": ["మా బృందం నిర్ధారిస్తుంది", "எங்கள் குழுவால் உறுதிப்படுத்தப்படும்", "हमारी टीम द्वारा पुष्टि"], "Your Medicine Order, Made Simple.": ["మీ మందుల ఆర్డర్, ఇప్పుడు సులభం.", "உங்கள் மருந்து ஆர்டர், இப்போது எளிது.", "आपका दवा ऑर्डर, अब आसान।"], "Four simple steps from enquiry to order confirmation.": ["విచారణ నుండి ఆర్డర్ నిర్ధారణ వరకు నాలుగు సులభమైన దశలు.", "விசாரணை முதல் ஆர்டர் உறுதிப்படுத்தல் வரை நான்கு எளிய படிகள்.", "पूछताछ से ऑर्डर की पुष्टि तक चार आसान चरण।"], "Start a Chat": ["చాట్ ప్రారంభించండి", "அரட்டையைத் தொடங்குங்கள்", "चैट शुरू करें"], "Scan the QR code or tap the WhatsApp button.": ["QR కోడ్‌ను స్కాన్ చేయండి లేదా WhatsApp బటన్‌ను నొక్కండి.", "QR குறியீட்டை ஸ்கேன் செய்யுங்கள் அல்லது WhatsApp பொத்தானைத் தட்டுங்கள்.", "QR कोड स्कैन करें या WhatsApp बटन दबाएँ।"], "Share Your Prescription": ["మీ ప్రిస్క్రిప్షన్ షేర్ చేయండి", "உங்கள் மருந்துச் சீட்டைப் பகிருங்கள்", "अपना प्रिस्क्रिप्शन साझा करें"], "Send a prescription photo, medicine name, or voice message.": ["ప్రిస్క్రిప్షన్ ఫోటో, మందు పేరు లేదా వాయిస్ మెసేజ్ పంపండి.", "மருந்துச் சீட்டின் புகைப்படம், மருந்தின் பெயர் அல்லது குரல் செய்தியை அனுப்புங்கள்.", "प्रिस्क्रिप्शन की फ़ोटो, दवा का नाम या वॉइस मैसेज भेजें।"], "Check Availability": ["లభ్యతను తనిఖీ చేయండి", "கிடைக்கும் தன்மையைச் சரிபாருங்கள்", "उपलब्धता जाँचें"], "Our team checks the requested medicines and responds within five minutes during business hours when available to do so.": ["మీరు కోరిన మందులను మా బృందం తనిఖీ చేస్తుంది మరియు వ్యాపార వేళల్లో వీలైనప్పుడు ఐదు నిమిషాల్లోపు స్పందిస్తుంది.", "நீங்கள் கேட்ட மருந்துகளை எங்கள் குழு சரிபார்த்து, வணிக நேரத்தில் இயன்றபோது ஐந்து நிமிடங்களுக்குள் பதிலளிக்கும்.", "हमारी टीम आपकी माँगी गई दवाइयाँ जाँचती है और कारोबारी समय में संभव होने पर पाँच मिनट के भीतर जवाब देती है।"], "Confirm Your Order": ["మీ ఆర్డర్‌ను నిర్ధారించండి", "உங்கள் ஆர்டரை உறுதிப்படுத்துங்கள்", "अपना ऑर्डर कन्फ़र्म करें"], "We confirm medicine availability and delivery options before processing the order.": ["ఆర్డర్ ప్రాసెస్ చేసే ముందు మందుల లభ్యత మరియు డెలివరీ ఎంపికలను మేము నిర్ధారిస్తాము.", "ஆர்டரைச் செயல்படுத்தும் முன் மருந்துகளின் கிடைக்கும் தன்மை மற்றும் டெலிவரி வசதிகளை உறுதிப்படுத்துவோம்.", "ऑर्डर प्रोसेस करने से पहले हम दवाओं की उपलब्धता और डिलीवरी विकल्पों की पुष्टि करते हैं।"], "Scan. Chat. Order.": ["స్కాన్ చేయండి. చాట్ చేయండి. ఆర్డర్ చేయండి.", "ஸ்கேன் செய்யுங்கள். அரட்டையடியுங்கள். ஆர்டர் செய்யுங்கள்.", "स्कैन करें। चैट करें। ऑर्डर करें।"], "Scan the QR code with your phone to start a conversation with Pooja Medicare on WhatsApp.": ["WhatsApp లో Pooja Medicare తో సంభాషణ ప్రారంభించడానికి మీ ఫోన్‌తో QR కోడ్‌ను స్కాన్ చేయండి.", "WhatsApp-இல் Pooja Medicare உடன் உரையாடலைத் தொடங்க உங்கள் தொலைபேசியில் QR குறியீட்டை ஸ்கேன் செய்யுங்கள்.", "WhatsApp पर Pooja Medicare से बातचीत शुरू करने के लिए अपने फ़ोन से QR कोड स्कैन करें।"], "Open WhatsApp Chat": ["WhatsApp చాట్ తెరవండి", "WhatsApp அரட்டையைத் திறக்கவும்", "WhatsApp चैट खोलें"], "Scan to chat": ["చాట్ కోసం స్కాన్ చేయండి", "அரட்டைக்கு ஸ்கேன் செய்யுங்கள்", "चैट के लिए स्कैन करें"], "OUR SERVICES": ["మా సేవలు", "எங்கள் சேவைகள்", "हमारी सेवाएँ"], "Everything starts with a message.": ["ప్రతిదీ ఒక సందేశంతో మొదలవుతుంది.", "எல்லாமே ஒரு செய்தியுடன் தொடங்குகிறது.", "सब कुछ एक संदेश से शुरू होता है।"], "Prescription Orders": ["ప్రిస్క్రిప్షన్ ఆర్డర్లు", "மருந்துச் சீட்டு ஆர்டர்கள்", "प्रिस्क्रिप्शन ऑर्डर"], "Share your prescription with our team on WhatsApp.": ["WhatsApp లో మీ ప్రిస్క్రిప్షన్‌ను మా బృందంతో షేర్ చేయండి.", "WhatsApp-இல் உங்கள் மருந்துச் சீட்டை எங்கள் குழுவுடன் பகிருங்கள்.", "WhatsApp पर अपना प्रिस्क्रिप्शन हमारी टीम के साथ साझा करें।"], "Medicine Enquiries": ["మందుల విచారణలు", "மருந்து விசாரணைகள்", "दवा संबंधी पूछताछ"], "Send a medicine name to check availability.": ["లభ్యత తెలుసుకోవడానికి మందు పేరు పంపండి.", "கிடைக்கும் தன்மையை அறிய மருந்தின் பெயரை அனுப்புங்கள்.", "उपलब्धता जानने के लिए दवा का नाम भेजें।"], "Get help from our pharmacy team with your enquiry.": ["మీ విచారణకు మా ఫార్మసీ బృందం నుండి సహాయం పొందండి.", "உங்கள் விசாரணைக்கு எங்கள் மருந்தக குழுவிடமிருந்து உதவி பெறுங்கள்.", "अपनी पूछताछ में हमारी फ़ार्मेसी टीम से मदद लें।"], "Availability Confirmation": ["లభ్యత నిర్ధారణ", "கிடைக்கும் தன்மை உறுதிப்படுத்தல்", "उपलब्धता की पुष्टि"], "We will confirm whether the requested medicines are available.": ["మీరు కోరిన మందులు అందుబాటులో ఉన్నాయో లేదో మేము నిర్ధారిస్తాము.", "நீங்கள் கேட்ட மருந்துகள் கிடைக்குமா என்பதை நாங்கள் உறுதிப்படுத்துவோம்.", "हम पुष्टि करेंगे कि माँगी गई दवाइयाँ उपलब्ध हैं या नहीं।"], "Delivery Enquiries": ["డెలివరీ విచారణలు", "டெலிவரி விசாரணைகள்", "डिलीवरी संबंधी पूछताछ"], "Ask our team about available delivery options.": ["అందుబాటులో ఉన్న డెలివరీ ఎంపికల గురించి మా బృందాన్ని అడగండి.", "கிடைக்கும் டெலிவரி வசதிகள் பற்றி எங்கள் குழுவிடம் கேளுங்கள்.", "उपलब्ध डिलीवरी विकल्पों के बारे में हमारी टीम से पूछें।"], "Easy WhatsApp Ordering": ["సులభమైన WhatsApp ఆర్డరింగ్", "எளிய WhatsApp ஆர்டர்", "आसान WhatsApp ऑर्डर"], "Start your enquiry without creating an account on the website.": ["వెబ్‌సైట్‌లో ఖాతా సృష్టించకుండానే మీ విచారణను ప్రారంభించండి.", "இணையதளத்தில் கணக்கு உருவாக்காமலேயே உங்கள் விசாரணையைத் தொடங்குங்கள்.", "वेबसाइट पर अकाउंट बनाए बिना अपनी पूछताछ शुरू करें।"], "What Would You Like to Order?": ["మీరు ఏమి ఆర్డర్ చేయాలనుకుంటున్నారు?", "நீங்கள் என்ன ஆர்டர் செய்ய விரும்புகிறீர்கள்?", "आप क्या ऑर्डर करना चाहेंगे?"], "Choose an option. We will open WhatsApp with your message ready to send.": ["ఒక ఎంపికను ఎంచుకోండి. మీ సందేశం సిద్ధంగా ఉన్న WhatsApp ను మేము తెరుస్తాము.", "ஒரு விருப்பத்தைத் தேர்ந்தெடுங்கள். உங்கள் செய்தி தயாராக WhatsApp-ஐ திறப்போம்.", "एक विकल्प चुनें। हम आपके संदेश के साथ WhatsApp खोल देंगे।"], "Medicine Name": ["మందు పేరు", "மருந்தின் பெயர்", "दवा का नाम"], "General Enquiry": ["సాధారణ విచారణ", "பொது விசாரணை", "सामान्य पूछताछ"], "Do not upload your prescription here. Send the photo directly in the WhatsApp chat after it opens.": ["మీ ప్రిస్క్రిప్షన్‌ను ఇక్కడ అప్‌లోడ్ చేయకండి. WhatsApp చాట్ తెరిచిన తర్వాత ఫోటోను నేరుగా అక్కడ పంపండి.", "உங்கள் மருந்துச் சீட்டை இங்கே பதிவேற்ற வேண்டாம். WhatsApp அரட்டை திறந்த பிறகு புகைப்படத்தை நேரடியாக அங்கே அனுப்புங்கள்.", "अपना प्रिस्क्रिप्शन यहाँ अपलोड न करें। WhatsApp चैट खुलने के बाद फ़ोटो सीधे वहीं भेजें।"], "Tap the button, then attach your prescription photo in WhatsApp and press Send.": ["బటన్‌ను నొక్కండి, ఆపై WhatsApp లో మీ ప్రిస్క్రిప్షన్ ఫోటోను జోడించి Send నొక్కండి.", "பொத்தானைத் தட்டி, பின்னர் WhatsApp-இல் உங்கள் மருந்துச் சீட்டின் புகைப்படத்தை இணைத்து Send அழுத்துங்கள்.", "बटन दबाएँ, फिर WhatsApp में अपने प्रिस्क्रिप्शन की फ़ोटो जोड़ें और Send दबाएँ।"], "Continue on WhatsApp": ["WhatsApp లో కొనసాగించండి", "WhatsApp-இல் தொடருங்கள்", "WhatsApp पर जारी रखें"], "Medicine name": ["మందు పేరు", "மருந்தின் பெயர்", "दवा का नाम"], "Type the medicine name": ["మందు పేరు టైప్ చేయండి", "மருந்தின் பெயரை தட்டச்சு செய்யுங்கள்", "दवा का नाम लिखें"], "Your message": ["మీ సందేశం", "உங்கள் செய்தி", "आपका संदेश"], "Type your question for our team": ["మా బృందానికి మీ ప్రశ్నను టైప్ చేయండి", "எங்கள் குழுவுக்கான உங்கள் கேள்வியை தட்டச்சு செய்யுங்கள்", "हमारी टीम के लिए अपना प्रश्न लिखें"], "Ask on WhatsApp": ["WhatsApp లో అడగండి", "WhatsApp-இல் கேளுங்கள்", "WhatsApp पर पूछें"], "Please enter a medicine name.": ["దయచేసి మందు పేరు నమోదు చేయండి.", "தயவுசெய்து மருந்தின் பெயரை உள்ளிடுங்கள்.", "कृपया दवा का नाम दर्ज करें।"], "Please type your message.": ["దయచేసి మీ సందేశాన్ని టైప్ చేయండి.", "தயவுசெய்து உங்கள் செய்தியை தட்டச்சு செய்யுங்கள்.", "कृपया अपना संदेश लिखें।"], "I would like to share my prescription.": ["నేను నా ప్రిస్క్రిప్షన్ షేర్ చేయాలనుకుంటున్నాను.", "நான் என் மருந்துச் சீட்டைப் பகிர விரும்புகிறேன்.", "मुझे अपना प्रिस्क्रिप्शन साझा करना है।"], "Hello Pooja Medicare! I would like to check availability of this medicine:": ["నమస్కారం Pooja Medicare! ఈ మందు లభ్యతను తెలుసుకోవాలనుకుంటున్నాను:", "வணக்கம் Pooja Medicare! இந்த மருந்து கிடைக்குமா என்பதை அறிய விரும்புகிறேன்:", "नमस्ते Pooja Medicare! मुझे इस दवा की उपलब्धता जाननी है:"], "Hello Pooja Medicare! I have an enquiry:": ["నమస్కారం Pooja Medicare! నాకు ఒక విచారణ ఉంది:", "வணக்கம் Pooja Medicare! எனக்கு ஒரு விசாரணை உள்ளது:", "नमस्ते Pooja Medicare! मेरी एक पूछताछ है:"], "Care That Puts You First.": ["మిమ్మల్ని ముందుంచే సేవ.", "உங்களை முதன்மைப்படுத்தும் அக்கறை.", "देखभाल जो आपको पहले रखती है।"], "Convenient Ordering": ["సౌకర్యవంతమైన ఆర్డరింగ్", "வசதியான ஆர்டர்", "सुविधाजनक ऑर्डर"], "Start from the phone you already use, with no website account.": ["మీరు ఇప్పటికే వాడుతున్న ఫోన్ నుండే మొదలుపెట్టండి, వెబ్‌సైట్ ఖాతా అవసరం లేదు.", "நீங்கள் ஏற்கனவே பயன்படுத்தும் தொலைபேசியிலிருந்தே தொடங்குங்கள், இணையதள கணக்கு தேவையில்லை.", "अपने मौजूदा फ़ोन से ही शुरू करें, वेबसाइट अकाउंट की ज़रूरत नहीं।"], "A member of our team handles your enquiry.": ["మా బృంద సభ్యుడు మీ విచారణను చూసుకుంటారు.", "எங்கள் குழு உறுப்பினர் உங்கள் விசாரணையைக் கையாளுவார்.", "हमारी टीम का सदस्य आपकी पूछताछ संभालता है।"], "Clear Availability Confirmation": ["స్పష్టమైన లభ్యత నిర్ధారణ", "தெளிவான கிடைக்கும் தன்மை உறுதிப்படுத்தல்", "स्पष्ट उपलब्धता पुष्टि"], "We tell you what is available before you decide.": ["మీరు నిర్ణయించే ముందే ఏమి అందుబాటులో ఉందో మేము చెబుతాము.", "நீங்கள் முடிவு செய்யும் முன் எவை கிடைக்கும் என்பதை நாங்கள் சொல்கிறோம்.", "आपके निर्णय से पहले हम बताते हैं कि क्या उपलब्ध है।"], "Delivery Information Before Confirmation": ["నిర్ధారణకు ముందే డెలివరీ సమాచారం", "உறுதிப்படுத்தலுக்கு முன் டெலிவரி தகவல்", "पुष्टि से पहले डिलीवरी की जानकारी"], "Delivery options are confirmed before processing.": ["ప్రాసెసింగ్‌కు ముందే డెలివరీ ఎంపికలు నిర్ధారించబడతాయి.", "செயல்படுத்தும் முன் டெலிவரி வசதிகள் உறுதிப்படுத்தப்படும்.", "प्रोसेसिंग से पहले डिलीवरी विकल्पों की पुष्टि की जाती है।"], "Medicine availability and delivery options are subject to confirmation. This website does not provide medical advice, diagnosis, prescriptions or emergency care.": ["మందుల లభ్యత మరియు డెలివరీ ఎంపికలు నిర్ధారణకు లోబడి ఉంటాయి. ఈ వెబ్‌సైట్ వైద్య సలహా, రోగ నిర్ధారణ, ప్రిస్క్రిప్షన్లు లేదా అత్యవసర సంరక్షణ అందించదు.", "மருந்துகளின் கிடைக்கும் தன்மை மற்றும் டெலிவரி வசதிகள் உறுதிப்படுத்தலுக்கு உட்பட்டவை. இந்த இணையதளம் மருத்துவ ஆலோசனை, நோய் கண்டறிதல், மருந்துச் சீட்டுகள் அல்லது அவசர சிகிச்சை வழங்காது.", "दवाओं की उपलब्धता और डिलीवरी विकल्प पुष्टि के अधीन हैं। यह वेबसाइट चिकित्सीय सलाह, निदान, प्रिस्क्रिप्शन या आपातकालीन देखभाल प्रदान नहीं करती।"], "Medicine availability and delivery options are subject to confirmation.": ["మందుల లభ్యత మరియు డెలివరీ ఎంపికలు నిర్ధారణకు లోబడి ఉంటాయి.", "மருந்துகளின் கிடைக்கும் தன்மை மற்றும் டெலிவரி வசதிகள் உறுதிப்படுத்தலுக்கு உட்பட்டவை.", "दवाओं की उपलब्धता और डिलीवरी विकल्प पुष्टि के अधीन हैं।"], "Need Medicines? Let’s Make It Simple.": ["మందులు కావాలా? సులభం చేద్దాం.", "மருந்துகள் தேவையா? எளிதாக்குவோம்.", "दवाइयाँ चाहिए? आइए इसे आसान बनाएँ।"], "Send your prescription or medicine enquiry to Pooja Medicare on WhatsApp.": ["మీ ప్రిస్క్రిప్షన్ లేదా మందుల విచారణను WhatsApp లో Pooja Medicare కు పంపండి.", "உங்கள் மருந்துச் சீட்டு அல்லது மருந்து விசாரணையை WhatsApp-இல் Pooja Medicare-க்கு அனுப்புங்கள்.", "अपना प्रिस्क्रिप्शन या दवा संबंधी पूछताछ WhatsApp पर Pooja Medicare को भेजें।"], "Start Your WhatsApp Order": ["మీ WhatsApp ఆర్డర్ ప్రారంభించండి", "உங்கள் WhatsApp ஆர்டரைத் தொடங்குங்கள்", "अपना WhatsApp ऑर्डर शुरू करें"], "Prescription or name": ["ప్రిస్క్రిప్షన్ లేదా పేరు", "மருந்துச் சீட்டு அல்லது பெயர்", "प्रिस्क्रिप्शन या नाम"], "Frequently Asked Questions": ["తరచుగా అడిగే ప్రశ్నలు", "அடிக்கடி கேட்கப்படும் கேள்விகள்", "अक्सर पूछे जाने वाले प्रश्न"], "How do I order medicines?": ["మందులను ఎలా ఆర్డర్ చేయాలి?", "மருந்துகளை எப்படி ஆர்டர் செய்வது?", "मैं दवाइयाँ कैसे ऑर्डर करूँ?"], "Open our WhatsApp chat and send your prescription photo, medicine name, or voice message.": ["మా WhatsApp చాట్ తెరిచి మీ ప్రిస్క్రిప్షన్ ఫోటో, మందు పేరు లేదా వాయిస్ మెసేజ్ పంపండి.", "எங்கள் WhatsApp அரட்டையைத் திறந்து மருந்துச் சீட்டின் புகைப்படம், மருந்தின் பெயர் அல்லது குரல் செய்தியை அனுப்புங்கள்.", "हमारा WhatsApp चैट खोलें और प्रिस्क्रिप्शन की फ़ोटो, दवा का नाम या वॉइस मैसेज भेजें।"], "Can I send a prescription photo?": ["నేను ప్రిస్క్రిప్షన్ ఫోటో పంపవచ్చా?", "மருந்துச் சீட்டின் புகைப்படத்தை அனுப்பலாமா?", "क्या प्रिस्क्रिप्शन की फ़ोटो भेजी जा सकती है?"], "Yes. You can share your prescription directly in our WhatsApp conversation.": ["అవును. మా WhatsApp సంభాషణలోనే మీ ప్రిస్క్రిప్షన్‌ను నేరుగా షేర్ చేయవచ్చు.", "ஆம். எங்கள் WhatsApp உரையாடலிலேயே உங்கள் மருந்துச் சீட்டை நேரடியாகப் பகிரலாம்.", "हाँ। आप अपना प्रिस्क्रिप्शन सीधे हमारी WhatsApp बातचीत में साझा कर सकते हैं।"], "How quickly will your team respond?": ["మీ బృందం ఎంత త్వరగా స్పందిస్తుంది?", "உங்கள் குழு எவ்வளவு விரைவாகப் பதிலளிக்கும்?", "आपकी टीम कितनी जल्दी जवाब देगी?"], "Our target is to respond within five minutes during business hours. Actual response time may vary.": ["వ్యాపార వేళల్లో ఐదు నిమిషాల్లోపు స్పందించడం మా లక్ష్యం. వాస్తవ స్పందన సమయం మారవచ్చు.", "வணிக நேரத்தில் ஐந்து நிமிடங்களுக்குள் பதிலளிப்பதே எங்கள் இலக்கு. உண்மையான பதில் நேரம் மாறுபடலாம்.", "कारोबारी समय में पाँच मिनट के भीतर जवाब देना हमारा लक्ष्य है। वास्तविक समय अलग हो सकता है।"], "Can I check medicine availability?": ["నేను మందుల లభ్యతను తెలుసుకోవచ్చా?", "மருந்து கிடைக்கும் தன்மையைச் சரிபார்க்கலாமா?", "क्या दवा की उपलब्धता जाँची जा सकती है?"], "Yes. Send the medicine name and our team will check availability.": ["అవును. మందు పేరు పంపండి, మా బృందం లభ్యతను తనిఖీ చేస్తుంది.", "ஆம். மருந்தின் பெயரை அனுப்புங்கள், எங்கள் குழு கிடைக்கும் தன்மையைச் சரிபார்க்கும்.", "हाँ। दवा का नाम भेजें, हमारी टीम उपलब्धता जाँच लेगी।"], "Is home delivery available?": ["హోమ్ డెలివరీ అందుబాటులో ఉందా?", "வீட்டு டெலிவரி உள்ளதா?", "क्या होम डिलीवरी उपलब्ध है?"], "Contact us on WhatsApp to confirm the delivery options available for your location.": ["మీ ప్రాంతానికి అందుబాటులో ఉన్న డెలివరీ ఎంపికలను నిర్ధారించుకోవడానికి WhatsApp లో మమ్మల్ని సంప్రదించండి.", "உங்கள் பகுதிக்குக் கிடைக்கும் டெலிவரி வசதிகளை உறுதிப்படுத்த WhatsApp-இல் எங்களைத் தொடர்பு கொள்ளுங்கள்.", "अपने क्षेत्र के लिए उपलब्ध डिलीवरी विकल्प जानने हेतु WhatsApp पर हमसे संपर्क करें।"], "Do I need to create a website account?": ["నేను వెబ్‌సైట్ ఖాతా సృష్టించాలా?", "இணையதள கணக்கு உருவாக்க வேண்டுமா?", "क्या मुझे वेबसाइट अकाउंट बनाना होगा?"], "No website account is needed to start an enquiry through WhatsApp.": ["WhatsApp ద్వారా విచారణ ప్రారంభించడానికి వెబ్‌సైట్ ఖాతా అవసరం లేదు.", "WhatsApp வழியாக விசாரணையைத் தொடங்க இணையதள கணக்கு தேவையில்லை.", "WhatsApp के ज़रिए पूछताछ शुरू करने के लिए वेबसाइट अकाउंट की ज़रूरत नहीं है।"], "How do I start a WhatsApp conversation?": ["WhatsApp సంభాషణను ఎలా ప్రారంభించాలి?", "WhatsApp உரையாடலை எப்படித் தொடங்குவது?", "WhatsApp बातचीत कैसे शुरू करूँ?"], "Scan our QR code or tap one of the WhatsApp buttons. Review the pre-filled message and tap Send.": ["మా QR కోడ్‌ను స్కాన్ చేయండి లేదా ఏదైనా WhatsApp బటన్‌ను నొక్కండి. ముందే నింపిన సందేశాన్ని పరిశీలించి Send నొక్కండి.", "எங்கள் QR குறியீட்டை ஸ்கேன் செய்யுங்கள் அல்லது ஏதேனும் WhatsApp பொத்தானைத் தட்டுங்கள். முன்பே நிரப்பிய செய்தியைப் பார்த்து Send தட்டுங்கள்.", "हमारा QR कोड स्कैन करें या किसी WhatsApp बटन को दबाएँ। पहले से भरा संदेश देखकर Send दबाएँ।"], "Address, email and business hours will appear here once verified details are added.": ["ధృవీకరించిన వివరాలు జోడించిన తర్వాత చిరునామా, ఈమెయిల్ మరియు వ్యాపార వేళలు ఇక్కడ కనిపిస్తాయి.", "சரிபார்க்கப்பட்ட விவரங்கள் சேர்க்கப்பட்டதும் முகவரி, மின்னஞ்சல் மற்றும் வணிக நேரம் இங்கே தோன்றும்.", "सत्यापित जानकारी जोड़े जाने पर पता, ईमेल और कारोबारी समय यहाँ दिखाई देंगे।"], "Chat on WhatsApp": ["WhatsApp లో చాట్ చేయండి", "WhatsApp-இல் அரட்டையடியுங்கள்", "WhatsApp पर चैट करें"], "A pharmacy that helps customers order medicines through WhatsApp. Trusted Pharmacy for a Healthier Tomorrow.": ["WhatsApp ద్వారా కస్టమర్లు మందులు ఆర్డర్ చేసుకోవడానికి సహాయపడే ఫార్మసీ. ఆరోగ్యకరమైన రేపటి కోసం నమ్మకమైన ఫార్మసీ.", "WhatsApp வழியாக வாடிக்கையாளர்கள் மருந்துகளை ஆர்டர் செய்ய உதவும் மருந்தகம். ஆரோக்கியமான நாளைக்கான நம்பகமான மருந்தகம்.", "एक फ़ार्मेसी जो ग्राहकों को WhatsApp के ज़रिए दवाइयाँ ऑर्डर करने में मदद करती है। बेहतर कल के लिए भरोसेमंद फ़ार्मेसी।"], "Explore": ["అన్వేషించండి", "ஆராயுங்கள்", "देखें"], "POOJA MEDICARE — YOUR HEALTH, OUR CARE.": ["POOJA MEDICARE — మీ ఆరోగ్యం, మా బాధ్యత.", "POOJA MEDICARE — உங்கள் ஆரோக்கியம், எங்கள் அக்கறை.", "POOJA MEDICARE — आपकी सेहत, हमारी देखभाल।"], "Pooja Medicare. All rights reserved.": ["Pooja Medicare. అన్ని హక్కులు రక్షితం.", "Pooja Medicare. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.", "Pooja Medicare. सर्वाधिकार सुरक्षित।"], "Need medicines? Chat with us.": ["మందులు కావాలా? మాతో చాట్ చేయండి.", "மருந்துகள் தேவையா? எங்களுடன் அரட்டையடியுங்கள்.", "दवाइयाँ चाहिए? हमसे चैट करें।"], "Pooja Medicare home": ["Pooja Medicare హోమ్", "Pooja Medicare முகப்பு", "Pooja Medicare होम"], "Main": ["ప్రధాన", "முதன்மை", "मुख्य"], "Open menu": ["మెనూ తెరవండి", "மெனுவைத் திறக்கவும்", "मेनू खोलें"], "Close menu": ["మెనూ మూసివేయండి", "மெனுவை மூடவும்", "मेनू बंद करें"], "Order type": ["ఆర్డర్ రకం", "ஆர்டர் வகை", "ऑर्डर का प्रकार"], "Chat with Pooja Medicare on WhatsApp": ["WhatsApp లో Pooja Medicare తో చాట్ చేయండి", "WhatsApp-இல் Pooja Medicare உடன் அரட்டையடியுங்கள்", "WhatsApp पर Pooja Medicare से चैट करें"], "Dismiss message": ["సందేశాన్ని మూసివేయండి", "செய்தியை மூடுங்கள்", "संदेश बंद करें"], "Language": ["భాష", "மொழி", "भाषा"], "Pooja Medicare WhatsApp QR code. Scan to start a chat.": ["Pooja Medicare WhatsApp QR కోడ్. చాట్ ప్రారంభించడానికి స్కాన్ చేయండి.", "Pooja Medicare WhatsApp QR குறியீடு. அரட்டையைத் தொடங்க ஸ்கேன் செய்யுங்கள்.", "Pooja Medicare WhatsApp QR कोड। चैट शुरू करने के लिए स्कैन करें।"], "Pooja Medicare WhatsApp QR code": ["Pooja Medicare WhatsApp QR కోడ్", "Pooja Medicare WhatsApp QR குறியீடு", "Pooja Medicare WhatsApp QR कोड"]};
+  var H={"note": ["WhatsApp ముందే రాసిన సందేశంతో తెరుచుకుంటుంది. సంభాషణ ప్రారంభించడానికి <strong>Send</strong> నొక్కండి.", "WhatsApp ஏற்கனவே எழுதப்பட்ட செய்தியுடன் திறக்கும். உரையாடலைத் தொடங்க <strong>Send</strong> என்பதைத் தட்டுங்கள்.", "WhatsApp पहले से लिखे संदेश के साथ खुलता है। बातचीत शुरू करने के लिए <strong>Send</strong> दबाएँ।"], "hint": ["మీ సందేశం సిద్ధంగా ఉన్న స్థితిలో WhatsApp తెరుచుకుంటుంది. అక్కడ <strong>Send</strong> నొక్కే వరకు ఏదీ పంపబడదు. దయచేసి ఈ పేజీలో వ్యక్తిగత వైద్య వివరాలు టైప్ చేయకండి; ఈ ఫారం మీ టెక్స్ట్‌ను నిల్వ చేయదు.", "உங்கள் செய்தி தயாராக WhatsApp திறக்கும். அங்கே <strong>Send</strong> என்பதைத் தட்டும் வரை எதுவும் அனுப்பப்படாது. இந்தப் பக்கத்தில் தனிப்பட்ட மருத்துவ விவரங்களை தட்டச்சு செய்ய வேண்டாம்; இந்தப் படிவம் உங்கள் உரையைச் சேமிக்காது.", "आपके संदेश के साथ WhatsApp खुलेगा। जब तक आप वहाँ <strong>Send</strong> नहीं दबाते, कुछ भी नहीं भेजा जाता। कृपया इस पेज पर निजी चिकित्सा जानकारी न लिखें; यह फ़ॉर्म आपका टेक्स्ट सेव नहीं करता।"]};
+  var LI={en:-1,te:0,ta:1,hi:2},LANGS=['en','te','ta','hi'],lang='en';
+  function T(s){var v=Object.prototype.hasOwnProperty.call(D,s)?D[s]:null;return(lang==='en'||!v)?s:(v[LI[lang]]||s);}
+
+  function wa(msg){return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg||T(DEFAULT_MSG));}
   var $=function(s,r){return (r||document).querySelector(s);},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s));};
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -513,7 +543,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--accent)}
 
   /* mobile nav */
   var bg=$('#burger'),nav=$('#nav');
-  function setNav(o){nav.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  function setNav(o){nav.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',T(o?'Close menu':'Open menu'));}
   bg.addEventListener('click',function(){setNav(!nav.classList.contains('open'));});
   $$('a.l',nav).forEach(function(a){a.addEventListener('click',function(){setNav(false);});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){setNav(false);}});
@@ -579,17 +609,17 @@ footer a{text-decoration:none}footer a:hover{color:var(--accent)}
     });
   });
   function go(msg){window.open(wa(msg),'_blank','noopener');}
-  $('[data-go=rx]').addEventListener('click',function(){go(DEFAULT_MSG+' I would like to share my prescription.');});
+  $('[data-go=rx]').addEventListener('click',function(){go(T(DEFAULT_MSG)+' '+T('I would like to share my prescription.'));});
   function bind(form,id,errId,empty,build){
     form.addEventListener('submit',function(e){
       e.preventDefault();var f=$(id),v=f.value.trim(),er=$(errId);
-      if(!v){er.textContent=empty;f.setAttribute('aria-invalid','true');f.focus();return;}
+      if(!v){er.textContent=T(empty);f.setAttribute('aria-invalid','true');f.focus();return;}
       er.textContent='';f.removeAttribute('aria-invalid');go(build(v));
     });
     $(id).addEventListener('input',function(){$(errId).textContent='';});
   }
-  bind(panels.med,'#med','#e-med','Please enter a medicine name.',function(v){return 'Hello Pooja Medicare! I would like to check availability of this medicine: '+v;});
-  bind(panels.gen,'#gen','#e-gen','Please type your message.',function(v){return 'Hello Pooja Medicare! I have an enquiry: '+v;});
+  bind(panels.med,'#med','#e-med','Please enter a medicine name.',function(v){return T('Hello Pooja Medicare! I would like to check availability of this medicine:')+' '+v;});
+  bind(panels.gen,'#gen','#e-gen','Please type your message.',function(v){return T('Hello Pooja Medicare! I have an enquiry:')+' '+v;});
 
   /* floating button tip: shown once per browser session unless dismissed */
   var tip=$('#tip'),seen=false;
@@ -597,6 +627,63 @@ footer a{text-decoration:none}footer a:hover{color:var(--accent)}
   function hideTip(){tip.hidden=true;try{sessionStorage.setItem('pm_tip','1');}catch(e){}}
   if(!seen){setTimeout(function(){tip.hidden=false;setTimeout(hideTip,9000);},3500);}
   $('#tipX').addEventListener('click',hideTip);
+
+  /* ===== language switcher ===== */
+  function textNodes(){
+    var out=[],w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+      var p=n.parentNode;if(!p)return NodeFilter.FILTER_REJECT;
+      var nm=p.nodeName;if(nm==='SCRIPT'||nm==='STYLE'||nm==='OPTION'||nm==='SELECT')return NodeFilter.FILTER_REJECT;
+      if(p.closest&&p.closest('[data-h]'))return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;}});
+    while(w.nextNode())out.push(w.currentNode);return out;
+  }
+  function applyText(){
+    textNodes().forEach(function(n){
+      if(n._k===undefined){
+        var m=n.nodeValue.match(/^(\s*)([\s\S]*?)(\s*)$/);
+        n._k=(m&&Object.prototype.hasOwnProperty.call(D,m[2]))?m[2]:null;
+        if(n._k){n._p=m[1];n._s=m[3];}
+      }
+      if(n._k){n.nodeValue=n._p+T(n._k)+n._s;}
+    });
+  }
+  function applyAttrs(){
+    $$('[aria-label],[alt],[placeholder]').forEach(function(el){
+      if(el===bg)return;
+      ['aria-label','alt','placeholder'].forEach(function(a){
+        if(!el.hasAttribute(a))return;
+        var k='_a_'+a;if(el[k]===undefined)el[k]=el.getAttribute(a);
+        el.setAttribute(a,T(el[k]));
+      });
+    });
+    $$('[data-h]').forEach(function(el){
+      if(el._h0===undefined)el._h0=el.innerHTML;
+      var v=H[el.getAttribute('data-h')];
+      el.innerHTML=(lang==='en'||!v)?el._h0:v[LI[lang]];
+    });
+    [['meta[name="description"]'],['meta[property="og:title"]'],['meta[property="og:description"]']].forEach(function(s){
+      var m=$(s[0]);if(!m)return;
+      if(m._c0===undefined)m._c0=m.getAttribute('content');
+      m.setAttribute('content',T(m._c0));
+    });
+    if(document.title&&!document._t0)document._t0=document.title;
+    document.title=T(document._t0);
+  }
+  function setLang(l,save){
+    if(LANGS.indexOf(l)<0)l='en';
+    lang=l;
+    document.documentElement.lang=l;
+    $$('select.lang').forEach(function(s){s.value=l;});
+    applyText();applyAttrs();
+    $$('.err').forEach(function(e){e.textContent='';});
+    $$('a.wa').forEach(function(a){a.href=wa();});
+    setNav(nav.classList.contains('open'));
+    if(save){try{localStorage.setItem('pm_lang',l);}catch(e){}}
+  }
+  $$('select.lang').forEach(function(s){s.addEventListener('change',function(){setLang(this.value,true);});});
+  var saved='en';try{saved=localStorage.getItem('pm_lang')||'en';}catch(e){}
+  if(saved!=='en'){setLang(saved,false);}
+
 })();
 </script>
 </body>
